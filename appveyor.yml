@@ -20,7 +20,7 @@ dotnet_csproj:
 
 test_script:
   - appveyor-retry dotnet restore -v Minimal
-  - dotnet test -c %CONFIGURATION% .\test\Dexih.Utils.MessageHelpersTests\
+  - dotnet test -c %CONFIGURATION% .\test\Dexih.Utils.MessageHelpers.Tests\
 artifacts:
   - path: artifacts\*.nupkg
 deploy:
