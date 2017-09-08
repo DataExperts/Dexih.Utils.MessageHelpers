@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Gary Holland</Authors>
+    <Company>Data Experts Group</Company>
+    <Product>Dexih</Product>
+    <Description>Provides returnValue structures that can be used to return success, messages and exceptions, along with required return values.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+</Project>
