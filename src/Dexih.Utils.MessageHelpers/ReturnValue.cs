@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Serialization;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -13,6 +14,7 @@ namespace Dexih.Utils.MessageHelpers
     /// Provide a simple structure that can be used as a function return value containing
     /// the success, message and exception details.
     /// </summary>
+    [DataContract]
     public class ReturnValue
     {
         public ReturnValue()
@@ -66,6 +68,8 @@ namespace Dexih.Utils.MessageHelpers
 #endif
 
         private bool _success;
+        
+        [DataMember(Order = 1)]
         public virtual bool Success {
             get => _success;
             set
@@ -83,12 +87,14 @@ namespace Dexih.Utils.MessageHelpers
         /// <summary>
         /// Message detailing the return status.
         /// </summary>
+        [DataMember(Order = 2)]
         public virtual string Message { get; set; }
 
         /// <summary>
         /// Exception if provided.  Note, this is not serialized.
         /// </summary>
         [JsonIgnore]
+        [IgnoreDataMember]
         public Exception Exception { get; set; }
 
         private string _exceptionDetails {get;set;} = "";
@@ -97,6 +103,7 @@ namespace Dexih.Utils.MessageHelpers
         /// Full trace of the exception.  This can either be set to a value, or 
         /// will be constructed from the exception.
         /// </summary>
+        [DataMember(Order = 3)]
         public virtual string ExceptionDetails
         {
             set => _exceptionDetails = value;

@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Runtime.Serialization;
 
 namespace Dexih.Utils.MessageHelpers
 {
+    [DataContract]
     public class ReturnValueMultiple : ReturnValue
     {
+        [DataMember(Order = 10)]
         public virtual List<ReturnValue> ReturnValues { get; protected set; } = new List<ReturnValue>();
 
         public void Add(ReturnValue returnValue)

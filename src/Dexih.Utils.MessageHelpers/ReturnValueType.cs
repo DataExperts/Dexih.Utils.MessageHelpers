@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Dexih.Utils.MessageHelpers
@@ -9,6 +10,7 @@ namespace Dexih.Utils.MessageHelpers
     /// <see cref="ReturnValue"/>
     /// </summary>
     /// <typeparam name="T">Type to return along with the ReturnValue</typeparam>
+    [DataContract]
     public class ReturnValue<T> : ReturnValue
     {
         public ReturnValue() { }
@@ -98,6 +100,8 @@ namespace Dexih.Utils.MessageHelpers
             var result = new ReturnValue<JToken>(Success, Message, Exception, jValue);
             return result;
         }
+
+        [DataMember(Order = 10)]
 
         public virtual T Value { get; set; }
 
