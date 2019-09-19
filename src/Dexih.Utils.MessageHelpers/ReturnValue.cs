@@ -69,7 +69,7 @@ namespace Dexih.Utils.MessageHelpers
 
         private bool _success;
         
-        [DataMember(Order = 1)]
+        [DataMember(Order = 0)]
         public virtual bool Success {
             get => _success;
             set
@@ -87,7 +87,7 @@ namespace Dexih.Utils.MessageHelpers
         /// <summary>
         /// Message detailing the return status.
         /// </summary>
-        [DataMember(Order = 2)]
+        [DataMember(Order = 1)]
         public virtual string Message { get; set; }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Dexih.Utils.MessageHelpers
         /// Full trace of the exception.  This can either be set to a value, or 
         /// will be constructed from the exception.
         /// </summary>
-        [DataMember(Order = 3)]
+        [DataMember(Order = 2)]
         public virtual string ExceptionDetails
         {
             set => _exceptionDetails = value;

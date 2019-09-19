@@ -101,8 +101,7 @@ namespace Dexih.Utils.MessageHelpers
             return result;
         }
 
-        [DataMember(Order = 10)]
-
+        [DataMember(Order =3)]
         public virtual T Value { get; set; }
 
     }

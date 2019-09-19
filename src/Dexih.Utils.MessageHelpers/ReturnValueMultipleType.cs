@@ -9,13 +9,13 @@ namespace Dexih.Utils.MessageHelpers
     [DataContract]
     public class ReturnValueMultiple<T> : ReturnValueMultiple
     {
-        [DataMember(Order = 10)]
+        [DataMember(Order = 4)]
         public override List<ReturnValue> ReturnValues
         {
             get => ReturnValueTypes.ToList<ReturnValue>();
         }
 
-        [DataMember(Order = 11)]
+        [DataMember(Order = 5)]
         public List<ReturnValue<T>> ReturnValueTypes { protected set; get; } = new List<ReturnValue<T>>();
 
         public void Add(ReturnValue<T> returnValue)
@@ -23,7 +23,7 @@ namespace Dexih.Utils.MessageHelpers
             ReturnValueTypes.Add(returnValue);
         }
 
-        [DataMember(Order = 12)]
+        [DataMember(Order = 6)]
         public T[] Value
         {
             get
