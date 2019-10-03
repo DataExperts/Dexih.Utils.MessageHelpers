@@ -1,8 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace Dexih.Utils.MessageHelpers
 {
@@ -76,30 +73,30 @@ namespace Dexih.Utils.MessageHelpers
             Value = (T)returnValue.Value;
         }
 
-        /// <summary>
-        /// Deserializes the value of a JToken value.
-        /// </summary>
-        /// <param name="returnValue"></param>
-        public ReturnValue(ReturnValue<JToken> returnValue)
-        {
-            SetReturnValue(returnValue);
-            Value = returnValue.Value.ToObject<T>();
-        }
-
-        /// <summary>
-        /// Creates a new ReturnValue with the Value serialized to a JToken.
-        /// </summary>
-        /// <returns></returns>
-        public ReturnValue<JToken> GetJToken()
-        {
-            JToken jValue = null;
-            if (Value != null)
-            {
-                jValue = JToken.FromObject(Value); // Json.JTokenFromObject(Value, "");
-            }
-            var result = new ReturnValue<JToken>(Success, Message, Exception, jValue);
-            return result;
-        }
+//        /// <summary>
+//        /// Deserializes the value of a JToken value.
+//        /// </summary>
+//        /// <param name="returnValue"></param>
+//        public ReturnValue(ReturnValue<JToken> returnValue)
+//        {
+//            SetReturnValue(returnValue);
+//            Value = returnValue.Value.ToObject<T>();
+//        }
+//
+//        /// <summary>
+//        /// Creates a new ReturnValue with the Value serialized to a JToken.
+//        /// </summary>
+//        /// <returns></returns>
+//        public ReturnValue<JToken> GetJToken()
+//        {
+//            JToken jValue = null;
+//            if (Value != null)
+//            {
+//                jValue = JToken.FromObject(Value); // Json.JTokenFromObject(Value, "");
+//            }
+//            var result = new ReturnValue<JToken>(Success, Message, Exception, jValue);
+//            return result;
+//        }
 
         [DataMember(Order =3)]
         public virtual T Value { get; set; }
