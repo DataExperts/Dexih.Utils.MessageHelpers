@@ -55,7 +55,7 @@ namespace Dexih.Utils.MessageHelpers
                 {
                     if (!string.IsNullOrEmpty(returnValue.ExceptionDetails))
                     {
-                        exceptionDetails.AppendLine("Exception Detials: " + returnValue.ExceptionDetails);
+                        exceptionDetails.AppendLine("Exception Details: " + returnValue.ExceptionDetails);
                     }
                 }
 
