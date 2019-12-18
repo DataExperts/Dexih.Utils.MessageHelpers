@@ -95,10 +95,10 @@ The `ReturnMessage`, is serializable to Json and looks as follows when serialize
 
 ```json
 {
-    'success': false,
-    'value': 123,
-    'message': 'the call failed'
-    'exceptionDetails': '<long details of the exception>'
+    "success": false,
+    "value": 123,
+    "message": "the call failed"
+    "exceptionDetails": "<long details of the exception>"
 }
 ```
 
