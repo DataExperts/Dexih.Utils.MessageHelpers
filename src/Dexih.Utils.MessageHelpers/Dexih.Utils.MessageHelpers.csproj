@@ -2,11 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+  <PackageId>Dexih.Utils.MessageHelpers</PackageId>
+    <Description>Helper classes that allow methods to return values along with success status, and error messages.  The class is serializable, and useful when returning values from controller API's.</Description>
+    <AssemblyTitle>Data Experts Group - MessageHelpers</AssemblyTitle>
     <Authors>Gary Holland</Authors>
-    <Company>Data Experts Group</Company>
-    <Product>Dexih</Product>
-    <Description>Provides returnValue structures that can be used to return success, messages and exceptions, along with required return values.</Description>
-  </PropertyGroup>
+    <PackageTags>message;return;exception;api;serialize</PackageTags>
+    <PackageReleaseNotes>Refer to the project url (https://github.com/DataExperts/Dexih.Utils.MessageHelpers) for documentation and raising issues</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/DataExperts/Dexih.Utils.MessageHelpers</PackageProjectUrl>
+    </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.4.0" />
